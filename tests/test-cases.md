@@ -1,0 +1,23 @@
+# Casos de prueba
+- T01 catálogo de comandos: carga y valida registros.
+- T02 catálogo DEMO: carga identificadores/nombres válidos.
+- T03 joystick cuatro direcciones: POST con true.
+- T04 soltar/cancelar puntero: mismo comando con false.
+- T05 cambio rápido de dirección: detener anterior y activar siguiente.
+- T06 DETENER: prioridad sobre movimiento manual.
+- T07 DEMO: POST de ejecución y eventos WSS.
+- T08 cancelar DEMO: no disponible, no simular éxito.
+- T09 caída WSS: reconexión progresiva.
+- T10 fallo REST: API no disponible.
+- T11 RDS: sin verificar.
+- T12 GitHub Pages subruta: favicon, CSS y módulos cargan.
+- T13 teclado: flechas y Escape/espacio.
+- T14 botón de movimiento: primer clic activa y cambia a verde solo tras respuesta HTTP satisfactoria.
+- T15 segundo clic en el mismo botón: envía OFF y restaura el estilo normal.
+- T16 cambio entre botones: el POST OFF del movimiento anterior termina antes del POST ON del nuevo.
+- T17 clic en DETENER durante una solicitud pendiente: la intención OFF prevalece y no queda otro comando activo.
+- T18 clics rápidos en varios botones: se procesa la última intención sin solapar comandos.
+- T19 joystick y botones comparten el mismo gestor; cambiar de origen desactiva el comando previo.
+- T20 iniciar DEMO: bloquea nuevos controles manuales, confirma OFF y después solicita ejecución.
+- T21 evento WSS estado_vehiculo: sincroniza el botón correspondiente con el estado reportado.
+- T22 evento WSS demo finalizada/cancelada: libera el bloqueo manual.

@@ -1,0 +1,1 @@
+import {request} from "./http.client.js";import {ENDPOINTS} from "../config/endpoints.js";export const commandsApi={list:()=>request(ENDPOINTS.commands),vehicle:()=>request(ENDPOINTS.vehicle),state:(id,connected)=>request(ENDPOINTS.state,{method:"POST",body:{id_comando:id,conectado:connected,origen:"WEBSOCKET"}})};

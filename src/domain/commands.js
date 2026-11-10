@@ -1,0 +1,1 @@
+export const JOY={up:"AVANZAR",down:"RETROCEDER",right:"GIRO_DERECHA",left:"GIRO_IZQUIERDA"};

@@ -1,0 +1,1 @@
+import {byId} from "../utils/dom.js";export function renderDemos(ds){const s=byId("demo-select");s.replaceChildren(new Option(ds.length?"Selecciona una DEMO":"No hay DEMO disponibles",""));for(const d of ds){const o=new Option(d.nombre,String(d.id_demo));o.title=d.descripcion||"";s.add(o);}byId("demo-start").disabled=!ds.length;}

@@ -1,0 +1,38 @@
+
+# Dependencias
+node_modules/
+
+# Archivos de configuración locales
+.env
+.env.*
+!.env.example
+
+# Archivos temporales
+*.log
+logs/
+tmp/
+temp/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuración de editores
+.vscode/
+.idea/
+
+# Archivos de respaldo
+*.bak
+*.old
+*~
+
+# Archivos generados
+dist/
+build/
+coverage/
+
+# Archivos comprimidos y paquetes locales
+*.zip
+*.rar
+*.7z

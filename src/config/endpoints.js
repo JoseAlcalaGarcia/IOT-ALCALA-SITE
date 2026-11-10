@@ -1,0 +1,1 @@
+import {CONFIG} from "./app.config.js"; const v=`/api/vehiculos/${encodeURIComponent(CONFIG.vehicleId)}`; export const ENDPOINTS={vehicle:v,state:`${v}/estado`,commands:`${v}/comandos`,demos:`${v}/demos`,executeDemo:id=>`${v}/demos/${encodeURIComponent(id)}/ejecutar`};

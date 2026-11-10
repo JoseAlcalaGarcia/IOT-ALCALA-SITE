@@ -1,0 +1,1 @@
+import {request} from "./http.client.js";import {ENDPOINTS} from "../config/endpoints.js";export const demosApi={list:()=>request(ENDPOINTS.demos),execute:id=>request(ENDPOINTS.executeDemo(id),{method:"POST"})}; // Cancelación no existe en el OpenAPI entregado.
