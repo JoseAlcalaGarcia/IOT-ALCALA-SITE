@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <title>Monitoreo IoT · Excavadora Alcalá</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/app.css">
+  <link rel="stylesheet" href="./assets/css/monitoring.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">SISTEMA DE CONTROL · IOT</p>
+        <h1 id="vehicle-name">Excavadora Alcalá</h1>
+        <p class="muted">Monitoreo del estado y actividad registrada</p>
+        <nav class="app-nav" aria-label="Navegación principal">
+          <a href="./index.html">Control</a>
+          <a class="active" aria-current="page" href="./monitoreo.html">Monitoreo</a>
+        </nav>
+      </div>
+      <div class="brand">A</div>
+    </header>
+
+    <section class="panel">
+      <div class="section-title"><h2>Conectividad</h2><small>ESTADO DE SERVICIOS</small></div>
+      <div class="statuses">
+        <article data-status-card="websocket"><i></i><div><b>WebSocket WSS</b><p id="ws-status" role="status">Conectando…</p></div></article>
+        <article data-status-card="api"><i></i><div><b>Servidor AWS · REST</b><p id="api-status" role="status">Comprobando…</p></div></article>
+        <article data-status-card="rds"><i></i><div><b>Amazon RDS</b><p id="rds-status" role="status">Sin verificar</p></div></article>
+      </div>
+      <p class="monitor-note">REST refleja la respuesta de las consultas utilizadas por esta vista; no verifica todos los servicios. RDS no dispone de una ruta de diagnóstico confirmada.</p>
+    </section>
+
+    <section class="monitor-grid">
+      <article class="panel current-state">
+        <div class="section-title"><h2>Estado actual</h2><small>REPORTE DEL SERVIDOR</small></div>
+        <p class="state-command" id="current-command">Consultando estado…</p>
+        <div class="state-details">
+          <div><span>Conexión reportada</span><strong id="current-connected">Sin datos</strong></div>
+          <div><span>Vehículo</span><strong id="current-vehicle">—</strong></div>
+          <div><span>Origen</span><strong id="current-origin">—</strong></div>
+          <div><span>Última actualización</span><strong id="current-updated">—</strong></div>
+        </div>
+      </article>
+      <article class="panel latest-movement">
+        <div class="section-title"><h2>Último movimiento</h2><small>HISTORIAL REAL</small></div>
+        <p class="state-command" id="latest-command">Cargando historial…</p>
+        <div class="state-details">
+          <div><span>Código</span><strong id="latest-code">—</strong></div>
+          <div><span>Fecha y hora</span><strong id="latest-date">—</strong></div>
+          <div><span>Origen</span><strong id="latest-origin">—</strong></div>
+          <div><span>Identificador</span><strong id="latest-id">—</strong></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-title"><h2>Últimos 10 movimientos</h2><small>ORDENADOS EN EL NAVEGADOR</small></div>
+      <p class="muted" id="history-message" role="status">Consultando historial…</p>
+      <div class="table-responsive">
+        <table class="table monitor-table align-middle">
+          <thead><tr><th>ID historial</th><th>Movimiento</th><th>Código</th><th>Fecha y hora</th><th>Origen</th></tr></thead>
+          <tbody id="history-rows"><tr><td colspan="5">Cargando registros…</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <footer>Desarrollado por Alcalá García José Luis · 2026</footer>
+  </main>
+  <script type="module" src="./assets/js/monitoring/monitoring.main.js"></script>
+</body>
+</html>

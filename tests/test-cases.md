@@ -21,3 +21,18 @@
 - T20 iniciar DEMO: bloquea nuevos controles manuales, confirma OFF y después solicita ejecución.
 - T21 evento WSS estado_vehiculo: sincroniza el botón correspondiente con el estado reportado.
 - T22 evento WSS demo finalizada/cancelada: libera el bloqueo manual.
+
+## Monitoreo y navegación
+- T23 navegación Control → Monitoreo → Control: ambos enlaces conservan rutas relativas.
+- T24 carga inicial de MONITOREO: consulta GET de estado y GET de historial sin parámetros adicionales.
+- T25 historial: orden descendente por `id_historial` cuando está disponible y muestra como máximo 10 filas.
+- T26 historial vacío: se muestra un mensaje sin fabricar movimientos.
+- T27 WSS `estado_vehiculo`: actualiza el estado actual y solicita nuevamente el historial REST.
+- T28 evento WSS sin `id_historial`/`fecha_hora`: no se agrega una fila artificial al historial.
+- T29 eventos `demo/ejecutar_movimiento` y `demo/finalizada`: no se agregan como movimientos al historial.
+- T30 reconexión WSS: vuelve a consultar estado e historial mediante REST.
+- T31 fechas REST sin offset: se interpretan y presentan en `America/Mexico_City`.
+- T32 timestamp WSS/REST con offset explícito: se presenta convertido a `America/Mexico_City`.
+- T33 indicador API: se interpreta como respuesta de consultas REST utilizadas, no como salud de los 21 servicios.
+- T34 indicador RDS: permanece en `Sin verificar`.
+- T35 GitHub Pages subruta: `monitoreo.html`, CSS, favicon y módulos cargan correctamente.

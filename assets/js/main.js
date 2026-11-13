@@ -13,8 +13,10 @@ import { bindJoystick } from "./controllers/joystick.controller.js";
 import { bindStop } from "./controllers/buttons.controller.js";
 import { bindDemo } from "./controllers/demo.controller.js";
 import { startApiCheck } from "./controllers/connectivity.controller.js";
+import { markCurrentView } from "./navigation/navigation.js";
 
 async function init() {
+  markCurrentView();
   const movement = new MovementManager(state => updateCommandButtons(state));
   const demo = new DemoManager();
 

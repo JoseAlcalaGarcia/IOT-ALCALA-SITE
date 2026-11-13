@@ -2,16 +2,20 @@ import { CONFIG } from "../config/app.config.js";
 import { onSocketMessage } from "./websocket.events.js";
 import { logActivity } from "../utils/dom.js";
 
+// Un cliente por vista activa. CONTROL y MONITOREO reutilizan esta misma clase,
+// URL y protocolo; no se abre una segunda conexión dentro de una misma página.
 export class SocketClient {
   socket = null;
   timer = null;
   attempt = 0;
   stopped = false;
+  everOpened = false;
 
-  constructor(demo, setStatus, movement) {
+  constructor(demo, setStatus, movement, onMonitoringEvent = () => {}) {
     this.demo = demo;
     this.setStatus = setStatus;
     this.movement = movement;
+    this.onMonitoringEvent = onMonitoringEvent;
   }
 
   connect() {
@@ -22,15 +26,15 @@ export class SocketClient {
     try {
       const socket = new WebSocket(CONFIG.websocketUrl);
       this.socket = socket;
-
       socket.onopen = () => {
         if (this.socket !== socket) return;
         this.attempt = 0;
         this.setStatus("online");
+        if (this.everOpened) this.onMonitoringEvent({ kind: "reconnected" });
+        this.everOpened = true;
         logActivity("Sesión WSS abierta.", "ok");
       };
-
-      socket.onmessage = event => onSocketMessage(event, this.demo, this.movement);
+      socket.onmessage = event => onSocketMessage(event, this.demo, this.movement, this.onMonitoringEvent);
       socket.onerror = () => {
         if (this.socket === socket) this.setStatus("reconnecting");
         logActivity("Error en WSS.", "err");

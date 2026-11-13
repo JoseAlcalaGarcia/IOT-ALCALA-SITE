@@ -1,1 +1,0 @@
-export const CONFIG=Object.freeze({apiBaseUrl:"https://iot-alcala.duckdns.org",websocketUrl:"wss://iot-alcala.duckdns.org/ws",vehicleId:1,timeoutMs:9000,apiCheckMs:30000,reconnectBaseMs:1000,reconnectMaxMs:20000,publicAccessToken:""});
