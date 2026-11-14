@@ -89,3 +89,8 @@ Los casos de `tests/test-cases.md` describen las verificaciones manuales y técn
 Las vistas CONTROL y MONITOREO utilizan una distribución ajustada al alto visible (`100dvh`) para evitar barras de desplazamiento vertical y horizontal en las resoluciones de trabajo habituales. En escritorio, CONTROL organiza joystick, movimientos y DEMO en tres columnas; la actividad queda en una franja compacta. MONITOREO distribuye conectividad, estado actual, último movimiento e historial en paneles que comparten el espacio disponible. En pantallas estrechas se compactan los indicadores, controles, tarjetas y tabla.
 
 La distribución está pensada para escritorio de 1366×768 o superior y móvil moderno en orientación vertical (por ejemplo, 390×844). En pantallas excepcionalmente pequeñas, con zoom del navegador elevado o escalado del sistema alto, algunos textos pueden requerir ajustes de escala para conservar la legibilidad. El contenido de actividad de CONTROL se mantiene en memoria visual, pero solo se muestran las entradas recientes para aprovechar el espacio sin introducir una barra de desplazamiento interna.
+
+
+### Ajuste compacto de la vista CONTROL
+
+La vista CONTROL utiliza un joystick reducido, un botón DETENER compacto y tres indicadores de conectividad discretos. Se eliminaron las dos leyendas redundantes bajo el joystick y el botón DETENER. El encabezado y los controles reducen sus márgenes y alturas para aprovechar mejor el viewport sin introducir desplazamiento horizontal o vertical.

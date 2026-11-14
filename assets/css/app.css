@@ -109,3 +109,99 @@ html,body{width:100%;height:100%;overflow:hidden}
 }
 @media(max-width:380px){.section-title h2{font-size:.88rem}.section-title small{font-size:.52rem}.panel{padding:8px}.app-nav a{padding:4px 9px;font-size:.7rem}.joystick{width:min(100%,32vw,175px)}}
 @media(max-height:720px){.shell{padding-top:6px;padding-bottom:6px;gap:6px}.panel{padding:9px}.section-title{margin-bottom:6px}.joystick{width:min(100%, min(26vh,210px))}.stop{min-height:44px;margin:7px 0 4px}.command,.primary,.secondary{min-height:38px}.log{max-height:58px}}
+
+
+/* Ajuste fino de CONTROL: controles compactos y sin colisiones. */
+.shell>header{padding:0 2px 2px;gap:12px}
+.shell>header .eyebrow{font-size:.56rem;letter-spacing:.1em;margin-bottom:0}
+.shell>header h1{font-size:clamp(1.05rem,1.65vw,1.5rem);line-height:1.08}
+.shell>header .muted{font-size:.66rem;line-height:1.1;margin:2px 0 0}
+.shell>header .brand{width:32px;height:32px;border-radius:9px;font-size:1rem;flex:0 0 32px}
+.shell>header .app-nav{margin-top:4px;gap:5px}
+.shell>header .app-nav a{padding:3px 9px;font-size:.68rem;border-radius:7px}
+
+/* Indicadores discretos: una sola línea por servicio, sin tarjetas grandes. */
+.shell>.panel:first-of-type{padding:7px 10px}
+.shell>.panel:first-of-type .section-title{margin-bottom:5px}
+.shell>.panel:first-of-type .section-title h2{font-size:.82rem}
+.shell>.panel:first-of-type .section-title small{font-size:.5rem}
+.statuses{gap:6px}
+.statuses article{display:flex;align-items:center;gap:6px;min-width:0;padding:5px 8px;border-radius:8px;background:#111a28;border-color:#29384c}
+.statuses article>div{display:flex;align-items:baseline;gap:6px;min-width:0;flex-wrap:wrap}
+.statuses article b{font-size:.68rem;font-weight:700;line-height:1.1;white-space:nowrap}
+.statuses article p{font-size:.64rem;line-height:1.1;margin:0;white-space:nowrap}
+.statuses i{width:6px;height:6px;flex:0 0 6px}
+
+.columns{gap:8px}
+.columns>.panel{padding:9px}
+.columns .section-title{margin-bottom:5px}
+.columns .section-title h2{font-size:.9rem}
+.columns .section-title small{font-size:.5rem}
+.joy-wrap{padding:0;min-height:0}
+.joystick{width:min(100%, min(21vh,185px));border-width:1px}
+#joystick-knob{width:27%;border-width:3px}
+.joystick span{font-size:.46rem}
+.command,.primary,.secondary{min-height:34px;padding:5px 7px;font-size:.66rem;border-radius:8px}
+.commands{gap:5px}
+.stop{min-height:34px;margin:6px 0 0;padding:5px 8px;font-size:.76rem;letter-spacing:.04em;border-radius:8px}
+.demo label{font-size:.7rem}
+.demo .form-select{min-height:34px;padding-top:4px;padding-bottom:4px;font-size:.72rem}
+.demo-actions{margin:5px 0;gap:5px}
+.demo-actions button{min-height:32px}
+#demo-state{font-size:.65rem;margin:2px 0 0}
+.shell>footer{font-size:.6rem}
+
+@media(max-width:900px){
+  .statuses article{padding:5px 6px;gap:5px}
+  .statuses article b{font-size:.62rem}
+  .statuses article p{font-size:.59rem}
+}
+@media(max-width:700px){
+  .shell>header h1{font-size:1.08rem}
+  .shell>header .eyebrow{font-size:.5rem}
+  .shell>header .muted{font-size:.6rem}
+  .shell>header .brand{width:28px;height:28px;flex-basis:28px;font-size:.9rem}
+  .statuses{gap:4px}
+  .statuses article{justify-content:flex-start;gap:4px;padding:4px 5px;min-height:34px}
+  .statuses article>div{display:flex;flex-direction:column;gap:1px}
+  .statuses article b{font-size:.55rem}
+  .statuses article p{font-size:.54rem}
+  .statuses i{width:5px;height:5px;flex-basis:5px}
+  .columns>.panel{padding:7px;min-width:0}
+  .columns .section-title h2{font-size:.78rem}
+  .columns .section-title small{font-size:.44rem;letter-spacing:.06em}
+  .joystick{width:min(100%, 29vw, 155px)}
+  .joystick span{font-size:.4rem}
+  #joystick-knob{width:26%;border-width:3px}
+  .command{min-height:31px;padding:4px 3px;font-size:.57rem}
+  .stop{min-height:31px;margin-top:5px;font-size:.68rem}
+  .demo .form-select{min-height:31px;font-size:.68rem}
+  .demo-actions button{min-height:29px;font-size:.6rem}
+}
+@media(max-width:380px){
+  .statuses article b{font-size:.5rem}
+  .statuses article p{font-size:.49rem}
+  .joystick{width:min(100%, 27vw, 135px)}
+  .command{font-size:.53rem}
+}
+@media(max-height:720px){
+  .shell>header{padding-bottom:0}
+  .shell>.panel:first-of-type{padding-top:5px;padding-bottom:5px}
+  .joystick{width:min(100%, min(19vh,160px))}
+  .stop{min-height:30px;margin-top:4px}
+  .log{max-height:46px}
+}
+@media(max-height:600px){
+  .shell{gap:4px;padding-top:4px;padding-bottom:4px}
+  .panel{padding:6px}
+  .shell>header .muted{display:none}
+  .shell>header .brand{display:none}
+  .shell>header .app-nav{margin-top:2px}
+  .statuses article{padding:3px 5px}
+  .columns .section-title{margin-bottom:3px}
+  .joystick{width:min(100%, 24vh, 125px)}
+  .demo-actions{margin:3px 0}
+  #demo-state{display:none}
+  .log{max-height:36px}
+  .shell>footer{display:none}
+}

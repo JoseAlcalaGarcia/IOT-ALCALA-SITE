@@ -45,3 +45,11 @@
 - **T25 – CONTROL móvil compacto:** abrir CONTROL a 390×844; verificar joystick, movimientos, DEMO, indicadores y actividad visibles sin scroll, sin superposición de controles.
 - **T26 – MONITOREO móvil compacto:** abrir MONITOREO a 390×844; verificar indicadores, estado, último movimiento e historial visibles, con columnas legibles y sin desbordamiento horizontal.
 - **T27 – Alturas reducidas:** repetir en 1366×720 y comprobar que las reglas compactas reduzcan espacios y tamaños sin ocultar los controles principales.
+
+
+### Ajustes de compactación de CONTROL
+- [ ] T28. El joystick se muestra centrado y reducido, sin invadir los paneles vecinos.
+- [ ] T29. DETENER conserva su funcionalidad y ocupa menos altura que antes.
+- [ ] T30. WSS, API y RDS se muestran como indicadores compactos, legibles y sin desbordamiento.
+- [ ] T31. Las dos leyendas redundantes ya no aparecen en la vista CONTROL.
+- [ ] T32. El encabezado ocupa menos altura y la vista no presenta scroll en escritorio ni móvil.
