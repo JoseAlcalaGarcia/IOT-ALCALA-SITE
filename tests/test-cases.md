@@ -36,3 +36,12 @@
 - T33 indicador API: se interpreta como respuesta de consultas REST utilizadas, no como salud de los 21 servicios.
 - T34 indicador RDS: permanece en `Sin verificar`.
 - T35 GitHub Pages subruta: `monitoreo.html`, CSS, favicon y módulos cargan correctamente.
+
+
+## Diseño adaptable sin scroll
+
+- **T23 – CONTROL escritorio sin scroll:** abrir `index.html` a 1366×768; verificar que header, conectividad, joystick, movimientos, DEMO, actividad y footer sean visibles sin scroll vertical u horizontal.
+- **T24 – MONITOREO escritorio sin scroll:** abrir `monitoreo.html` a 1366×768; verificar que conectividad, estado actual, último movimiento y los 10 registros quepan en la ventana sin scroll.
+- **T25 – CONTROL móvil compacto:** abrir CONTROL a 390×844; verificar joystick, movimientos, DEMO, indicadores y actividad visibles sin scroll, sin superposición de controles.
+- **T26 – MONITOREO móvil compacto:** abrir MONITOREO a 390×844; verificar indicadores, estado, último movimiento e historial visibles, con columnas legibles y sin desbordamiento horizontal.
+- **T27 – Alturas reducidas:** repetir en 1366×720 y comprobar que las reglas compactas reduzcan espacios y tamaños sin ocultar los controles principales.

@@ -30,8 +30,10 @@ export function renderHistory(records) {
   }
   records.slice(0, 10).forEach(record => {
     const row = tbody.insertRow();
-    [record.id_historial ?? "—", record.comando ?? "—", record.codigo ?? "—", formatDate(record.fecha_hora), record.origen ?? "—"].forEach(value => {
-      const cell = row.insertCell(); cell.textContent = String(value);
+    [record.id_historial ?? "—", record.comando ?? "—", record.codigo ?? "—", formatDate(record.fecha_hora), record.origen ?? "—"].forEach((value, index) => {
+      const cell = row.insertCell();
+      cell.dataset.label = ["ID", "Movimiento", "Código", "Fecha y hora", "Origen"][index];
+      cell.textContent = String(value);
     });
   });
   if (message) message.textContent = `Se muestran ${Math.min(records.length, 10)} de ${records.length} registros recibidos del historial.`;

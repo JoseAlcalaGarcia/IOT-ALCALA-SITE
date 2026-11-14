@@ -50,3 +50,62 @@
 }
 
 .app-nav{display:flex;gap:8px;margin-top:12px}.app-nav a{display:inline-block;padding:8px 14px;border:1px solid var(--line);border-radius:10px;color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:800}.app-nav a:hover,.app-nav a.active{background:#2b3d57;border-color:var(--accent);color:var(--text)}
+
+
+/* Diseño compacto sin scroll para la vista CONTROL (pantallas de escritorio y móvil). */
+html,body{width:100%;height:100%;overflow:hidden}
+.shell{height:100dvh;min-height:0;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto auto;gap:10px;padding:10px 16px;overflow:hidden}
+.shell>header{padding:2px 2px 4px;min-height:0}
+.shell>header h1{margin:0;font-size:clamp(1.35rem,2.2vw,2rem)}
+.shell>header .eyebrow{margin:0 0 2px}
+.shell>header .muted{margin:2px 0}
+.brand{width:42px;height:42px;font-size:1.35rem}
+.app-nav{margin-top:6px}
+.app-nav a{padding:5px 12px}
+.panel{padding:12px;margin:0;min-height:0}
+.section-title{margin-bottom:9px}
+.statuses article{padding:8px 10px}
+.statuses article p{font-size:.72rem}
+.columns{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:10px;min-height:0}
+.columns>.panel{display:flex;flex-direction:column;min-width:0}
+.joy-wrap{flex:1;min-height:0;padding:2px}
+.joystick{width:min(100%, min(30vh,250px))}
+.columns>.panel>.muted{margin:6px 0 0;font-size:.72rem}
+.commands{gap:7px}
+.command,.primary,.secondary{min-height:42px;padding:7px;font-size:.72rem}
+.stop{min-height:50px;margin:10px 0 6px}
+.demo-actions{gap:7px;margin:9px 0}
+.demo .form-select{min-height:42px}
+.demo label{font-size:.78rem}
+.log{max-height:78px;overflow:hidden;margin:0}
+.log li{padding:6px 8px;margin:4px 0;font-size:.7rem}
+.shell>footer{padding:0;font-size:.68rem}
+@media(max-width:900px){.shell{padding:8px 10px;gap:8px}.columns{gap:8px}.panel{padding:10px}.statuses{gap:6px}.statuses article{padding:7px}.statuses article b{font-size:.78rem}}
+@media(max-width:700px){
+  .shell{grid-template-rows:auto auto minmax(0,1fr) auto auto;gap:7px;padding:7px;height:100dvh}
+  .shell>header{align-items:center}
+  .shell>header h1{font-size:1.25rem}
+  .shell>header .muted{font-size:.68rem}
+  .brand{width:34px;height:34px;font-size:1.1rem}
+  .statuses{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+  .statuses article{gap:5px;padding:6px;min-height:48px}
+  .statuses article b{font-size:.62rem;line-height:1.1}
+  .statuses article p{font-size:.61rem;line-height:1.1}
+  .statuses i{width:7px;height:7px;flex-basis:7px}
+  .columns{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:7px}
+  .columns>.panel:first-child{grid-row:1 / span 2}
+  .joystick{width:min(100%, 36vw, 205px)}
+  .joystick span{font-size:.48rem}
+  .commands{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+  .command{min-height:36px;font-size:.62rem;padding:5px}
+  .stop{min-height:43px;margin:7px 0 4px;font-size:.82rem}
+  .demo-actions{flex-direction:column;gap:5px;margin:6px 0}
+  .demo-actions button{min-height:34px;flex:none}
+  .demo .form-select{min-height:36px;font-size:.75rem}
+  .demo label,.columns>.panel>.muted{font-size:.63rem}
+  .log{max-height:56px}
+  .log li{font-size:.61rem;padding:4px 6px}
+  .shell>footer{font-size:.58rem}
+}
+@media(max-width:380px){.section-title h2{font-size:.88rem}.section-title small{font-size:.52rem}.panel{padding:8px}.app-nav a{padding:4px 9px;font-size:.7rem}.joystick{width:min(100%,32vw,175px)}}
+@media(max-height:720px){.shell{padding-top:6px;padding-bottom:6px;gap:6px}.panel{padding:9px}.section-title{margin-bottom:6px}.joystick{width:min(100%, min(26vh,210px))}.stop{min-height:44px;margin:7px 0 4px}.command,.primary,.secondary{min-height:38px}.log{max-height:58px}}

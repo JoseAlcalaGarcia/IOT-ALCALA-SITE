@@ -82,3 +82,10 @@ El proyecto utiliza rutas relativas (`./`) para que HTML, CSS, favicon y módulo
 ## Validación
 
 Los casos de `tests/test-cases.md` describen las verificaciones manuales y técnicas pendientes. No se afirma que las pruebas contra el servidor remoto se hayan ejecutado desde este entorno.
+
+
+## Diseño de vistas sin desplazamiento
+
+Las vistas CONTROL y MONITOREO utilizan una distribución ajustada al alto visible (`100dvh`) para evitar barras de desplazamiento vertical y horizontal en las resoluciones de trabajo habituales. En escritorio, CONTROL organiza joystick, movimientos y DEMO en tres columnas; la actividad queda en una franja compacta. MONITOREO distribuye conectividad, estado actual, último movimiento e historial en paneles que comparten el espacio disponible. En pantallas estrechas se compactan los indicadores, controles, tarjetas y tabla.
+
+La distribución está pensada para escritorio de 1366×768 o superior y móvil moderno en orientación vertical (por ejemplo, 390×844). En pantallas excepcionalmente pequeñas, con zoom del navegador elevado o escalado del sistema alto, algunos textos pueden requerir ajustes de escala para conservar la legibilidad. El contenido de actividad de CONTROL se mantiene en memoria visual, pero solo se muestran las entradas recientes para aprovechar el espacio sin introducir una barra de desplazamiento interna.
