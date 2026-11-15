@@ -343,3 +343,20 @@ html,body{width:100%;height:100%;overflow:hidden}
   .columns>.joy-area .joystick{width:min(100%,20vh,105px)}
   .columns>section.panel:not(.demo) .commands{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+/* En horizontal, los 12 movimientos se distribuyen en 3 columnas.
+   En vertical se conserva la distribución actual de 2 columnas. */
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){
+  .columns>section.panel:not(.demo) .commands{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:3px;
+  }
+  .columns>section.panel:not(.demo) .command{
+    width:100%;
+    min-width:0;
+    padding:2px 1px;
+    font-size:clamp(.43rem,1.1vw,.5rem);
+    line-height:1.05;
+    overflow-wrap:anywhere;
+  }
+}
