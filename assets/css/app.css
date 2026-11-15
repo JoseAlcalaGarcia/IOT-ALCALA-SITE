@@ -205,3 +205,116 @@ html,body{width:100%;height:100%;overflow:hidden}
   .log{max-height:36px}
   .shell>footer{display:none}
 }
+
+
+/* MOBILE FIRST: distribución estable de CONTROL, sin solapamientos. */
+.status-panel .statuses{margin:0}
+.status-panel{min-width:0}
+@media(max-width:700px) and (orientation:portrait){
+  .shell{grid-template-rows:auto auto minmax(0,1fr) auto auto;gap:6px;padding:6px;height:100dvh;min-height:0}
+  .shell>header{padding:0 1px;gap:8px}
+  .shell>header .eyebrow{font-size:.46rem;line-height:1;margin:0 0 2px}
+  .shell>header h1{font-size:1.02rem;line-height:1.05;margin:0}
+  .shell>header .muted{font-size:.56rem;line-height:1;margin:2px 0}
+  .shell>header .brand{width:25px;height:25px;flex-basis:25px;font-size:.78rem}
+  .shell>header .app-nav{margin-top:3px;gap:4px}
+  .shell>header .app-nav a{font-size:.61rem;padding:3px 8px}
+  .status-panel{padding:4px 6px;border-radius:9px}
+  .statuses{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+  .statuses article{min-height:27px;padding:3px 4px;gap:4px;border-radius:6px}
+  .statuses article>div{display:flex;flex-direction:column;gap:1px;min-width:0}
+  .statuses article b{font-size:.49rem;line-height:1.05;white-space:normal}
+  .statuses article p{font-size:.48rem;line-height:1.05;margin:0;white-space:normal}
+  .statuses i{width:5px;height:5px;flex-basis:5px}
+  .columns{grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);grid-template-rows:minmax(0,1fr) auto;grid-template-areas:"joy commands" "demo demo";gap:6px;min-height:0}
+  .columns>.panel:first-child{grid-area:joy;grid-row:auto}
+  .columns>.panel:nth-child(2){grid-area:commands}
+  .columns>.demo{grid-area:demo}
+  .columns>.panel{padding:7px;min-height:0;border-radius:11px}
+  .columns .section-title{align-items:flex-start;flex-direction:column;gap:1px;margin-bottom:4px}
+  .columns .section-title h2{font-size:.74rem;line-height:1.05}
+  .columns .section-title small{font-size:.43rem;line-height:1}
+  .joy-wrap{display:grid;place-items:center;min-height:0;padding:0}
+  .joystick{width:min(100%,34vw,145px,19vh);max-width:100%;flex:0 0 auto}
+  .joystick span{font-size:clamp(.34rem,1.35vw,.43rem)}
+  #joystick-knob{width:26%;border-width:2px}
+  .commands{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;min-height:0}
+  .command{min-width:0;min-height:30px;padding:3px 2px;font-size:clamp(.49rem,1.8vw,.59rem);line-height:1.05;border-radius:7px;overflow-wrap:anywhere}
+  .command.is-active::after,.command[aria-busy="true"]::after{font-size:.43rem;margin-top:2px}
+  .stop{min-height:29px;margin:5px 0 0;padding:3px 5px;font-size:.64rem;line-height:1;border-radius:7px}
+  .demo .section-title{flex-direction:row;align-items:center}
+  .demo label{font-size:.58rem;line-height:1.05}
+  .demo .form-select{min-height:30px;height:30px;margin-top:3px;padding:3px 25px 3px 7px;font-size:.62rem}
+  .demo-actions{display:flex;flex-direction:row;gap:5px;margin:5px 0 0}
+  .demo-actions button{flex:1;min-width:0;min-height:28px;padding:3px 4px;font-size:.55rem;line-height:1.05}
+  #demo-state{font-size:.52rem;line-height:1.05;margin:3px 0 0}
+  .shell>section.panel:last-of-type{padding:5px 7px}
+  .shell>section.panel:last-of-type .section-title{margin:0 0 3px}
+  .shell>section.panel:last-of-type .section-title h2{font-size:.67rem}
+  .shell>section.panel:last-of-type .section-title small{font-size:.42rem}
+  .log{max-height:36px;overflow:hidden;margin:0}
+  .log li{font-size:.49rem;padding:3px 5px;margin:2px 0;line-height:1.05}
+  .shell>footer{font-size:.48rem;line-height:1;padding:0}
+}
+@media(max-width:380px) and (orientation:portrait){
+  .shell{gap:4px;padding:5px}
+  .columns{gap:4px}
+  .columns>.panel{padding:5px}
+  .joystick{width:min(100%,31vw,128px,18vh)}
+  .command{font-size:.47rem;min-height:27px}
+  .stop{min-height:27px;font-size:.59rem}
+  .demo .form-select{font-size:.58rem}
+  .demo-actions button{font-size:.5rem}
+  .statuses article b,.statuses article p{font-size:.45rem}
+}
+/* En horizontal se usan tres columnas: joystick, movimientos y DEMO. */
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){
+  .shell{grid-template-rows:auto auto minmax(0,1fr) auto;gap:4px;padding:4px 8px;height:100dvh}
+  .shell>header{padding:0;gap:8px}
+  .shell>header .eyebrow{font-size:.44rem;margin:0}
+  .shell>header h1{font-size:.92rem;line-height:1;margin:0}
+  .shell>header .muted{display:none}
+  .shell>header .brand{display:none}
+  .shell>header .app-nav{margin:2px 0 0;gap:4px}
+  .shell>header .app-nav a{font-size:.56rem;padding:2px 7px}
+  .status-panel{padding:3px 6px}
+  .statuses{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+  .statuses article{padding:2px 5px;gap:4px;border-radius:6px}
+  .statuses article>div{display:flex;flex-direction:row;align-items:baseline;gap:4px}
+  .statuses article b{font-size:.52rem;white-space:nowrap}
+  .statuses article p{font-size:.5rem;white-space:nowrap;margin:0}
+  .statuses i{width:5px;height:5px;flex-basis:5px}
+  .columns{grid-template-columns:minmax(0,.85fr) minmax(0,1fr) minmax(0,1.15fr);grid-template-rows:minmax(0,1fr);grid-template-areas:"joy commands demo";gap:5px;min-height:0}
+  .columns>.panel:first-child,.columns>.panel:nth-child(2),.columns>.demo{grid-area:auto;grid-row:auto}
+  .columns>.panel:first-child{grid-area:joy}
+  .columns>.panel:nth-child(2){grid-area:commands}
+  .columns>.demo{grid-area:demo}
+  .columns>.panel{padding:5px;min-height:0;border-radius:9px}
+  .columns .section-title{margin:0 0 3px;gap:2px}
+  .columns .section-title h2{font-size:.68rem;line-height:1.05}
+  .columns .section-title small{font-size:.4rem;line-height:1}
+  .joystick{width:min(100%,22vh,115px)}
+  .joystick span{font-size:.36rem}
+  #joystick-knob{width:26%;border-width:2px}
+  .commands{gap:3px;min-height:0}
+  .command{min-height:26px;padding:2px;font-size:.5rem;line-height:1}
+  .stop{min-height:27px;margin:4px 0 0;padding:2px;font-size:.6rem}
+  .demo label{font-size:.54rem}
+  .demo .form-select{min-height:27px;height:27px;margin-top:2px;padding:2px 22px 2px 5px;font-size:.56rem}
+  .demo-actions{gap:4px;margin:4px 0 0}
+  .demo-actions button{min-height:26px;padding:2px;font-size:.5rem}
+  #demo-state{font-size:.48rem;margin:2px 0 0;line-height:1}
+  .shell>section.panel:last-of-type{padding:3px 6px}
+  .shell>section.panel:last-of-type .section-title{display:none}
+  .log{max-height:25px;overflow:hidden}
+  .log li{font-size:.46rem;padding:2px 4px;margin:1px 0}
+  .shell>footer{display:none}
+}
+@media(max-height:430px) and (orientation:landscape){
+  .shell{gap:3px;padding:3px 6px}
+  .columns .panel{padding:4px}
+  .joystick{width:min(100%,19vh,92px)}
+  .demo-actions button{min-height:23px}
+  #demo-state{display:none}
+  .log{max-height:20px}
+}

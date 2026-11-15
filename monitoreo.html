@@ -25,14 +25,12 @@
       <div class="brand">A</div>
     </header>
 
-    <section class="panel">
-      <div class="section-title"><h2>Conectividad</h2><small>ESTADO DE SERVICIOS</small></div>
+    <section class="panel status-panel">
       <div class="statuses">
         <article data-status-card="websocket"><i></i><div><b>WebSocket WSS</b><p id="ws-status" role="status">Conectando…</p></div></article>
         <article data-status-card="api"><i></i><div><b>Servidor AWS · REST</b><p id="api-status" role="status">Comprobando…</p></div></article>
         <article data-status-card="rds"><i></i><div><b>Amazon RDS</b><p id="rds-status" role="status">Sin verificar</p></div></article>
       </div>
-      <p class="monitor-note">REST refleja la respuesta de las consultas utilizadas por esta vista; no verifica todos los servicios. RDS no dispone de una ruta de diagnóstico confirmada.</p>
     </section>
 
     <section class="monitor-grid">

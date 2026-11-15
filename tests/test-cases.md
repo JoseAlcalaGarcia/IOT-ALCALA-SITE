@@ -53,3 +53,10 @@
 - [ ] T30. WSS, API y RDS se muestran como indicadores compactos, legibles y sin desbordamiento.
 - [ ] T31. Las dos leyendas redundantes ya no aparecen en la vista CONTROL.
 - [ ] T32. El encabezado ocupa menos altura y la vista no presenta scroll en escritorio ni móvil.
+
+
+## Ajustes móviles de conectividad y distribución
+- T28: CONTROL en móvil vertical (320×568, 390×844): indicadores sin encabezado; joystick, movimientos y DEMO permanecen en sus áreas y no se superponen.
+- T29: CONTROL en móvil horizontal (844×390): joystick, movimientos y DEMO se distribuyen en tres columnas sin invadir otros paneles.
+- T30: MONITOREO en móvil vertical: indicadores compactos; no aparece el texto explicativo de REST/RDS; tabla ajustada al ancho disponible.
+- T31: MONITOREO en móvil horizontal (844×390): tarjetas de estado y tabla se mantienen dentro del viewport sin scroll horizontal ni superposición.

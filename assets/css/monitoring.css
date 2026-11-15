@@ -69,3 +69,111 @@ html,body{width:100%;height:100%;overflow:hidden}
 }
 @media(max-width:380px){.panel{padding:6px}.section-title h2{font-size:.84rem}.section-title small{font-size:.49rem}.monitor-table{font-size:.52rem}.monitor-table th{font-size:.46rem}.state-details span{font-size:.49rem}.state-details strong{font-size:.57rem}}
 @media(max-height:720px){.shell{padding-top:5px;padding-bottom:5px;gap:5px}.panel{padding:8px}.monitor-grid .panel{padding:7px}.state-details div{padding:5px}.monitor-table td{padding:3px 6px}.monitor-note{margin-top:3px}}
+
+
+/* MOBILE FIRST: conectividad compacta y panel de monitoreo sin colisiones. */
+.status-panel .statuses{margin:0}
+.status-panel{min-width:0}
+@media(max-width:700px) and (orientation:portrait){
+  .shell{grid-template-rows:auto auto auto minmax(0,1fr) auto;gap:5px;padding:6px;height:100dvh;min-height:0}
+  .shell>header{padding:0 1px;gap:8px}
+  .shell>header .eyebrow{font-size:.46rem;line-height:1;margin:0 0 2px}
+  .shell>header h1{font-size:1.02rem;line-height:1.05;margin:0}
+  .shell>header .muted{font-size:.55rem;line-height:1;margin:2px 0}
+  .shell>header .brand{width:25px;height:25px;font-size:.78rem}
+  .shell>header .app-nav{margin-top:3px;gap:4px}
+  .shell>header .app-nav a{font-size:.61rem;padding:3px 8px}
+  .status-panel{padding:4px 6px;border-radius:9px}
+  .statuses{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+  .statuses article{min-height:27px;padding:3px 4px;gap:4px;border-radius:6px}
+  .statuses article>div{display:flex;flex-direction:column;gap:1px;min-width:0}
+  .statuses article b{font-size:.49rem;line-height:1.05;white-space:normal}
+  .statuses article p{font-size:.48rem;line-height:1.05;margin:0;white-space:normal}
+  .statuses i{width:5px;height:5px;flex-basis:5px}
+  .monitor-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;min-height:0}
+  .monitor-grid .panel{padding:6px;min-width:0;border-radius:9px}
+  .monitor-grid .section-title{display:block;margin:0 0 4px}
+  .monitor-grid .section-title h2{font-size:.68rem;line-height:1.05}
+  .monitor-grid .section-title small{display:block;font-size:.39rem;line-height:1;margin-top:2px}
+  .state-command{font-size:.82rem;line-height:1.05;margin:2px 0 4px;overflow-wrap:anywhere}
+  .state-details{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px}
+  .state-details div{padding:4px;min-width:0;border-radius:6px}
+  .state-details span{font-size:.45rem;line-height:1.05;margin-bottom:2px}
+  .state-details strong{font-size:.53rem;line-height:1.05;overflow-wrap:anywhere}
+  .shell>section.panel:last-of-type{padding:6px;min-height:0}
+  .shell>section.panel:last-of-type .section-title{margin:0 0 3px;gap:3px}
+  .shell>section.panel:last-of-type .section-title h2{font-size:.7rem}
+  .shell>section.panel:last-of-type .section-title small{font-size:.4rem}
+  #history-message{font-size:.49rem;line-height:1;margin:0 0 3px}
+  .shell>section.panel:last-of-type .table-responsive{padding:0 3px;min-height:0;overflow:hidden}
+  .monitor-table{table-layout:fixed;width:100%;font-size:.5rem}
+  .monitor-table th{font-size:.44rem;padding:3px 2px;letter-spacing:0;white-space:normal}
+  .monitor-table td{font-size:.48rem;padding:3px 2px;line-height:1.05;white-space:normal;overflow-wrap:anywhere}
+  .monitor-table th:first-child,.monitor-table td:first-child,
+  .monitor-table th:last-child,.monitor-table td:last-child{display:none}
+  .monitor-table th:nth-child(2),.monitor-table td:nth-child(2){width:34%}
+  .monitor-table th:nth-child(3),.monitor-table td:nth-child(3){width:16%}
+  .monitor-table th:nth-child(4),.monitor-table td:nth-child(4){width:50%}
+  .monitor-table tbody tr{height:10%}
+  .shell>footer{font-size:.47rem;line-height:1;padding:0}
+}
+@media(max-width:380px) and (orientation:portrait){
+  .shell{gap:4px;padding:5px}
+  .monitor-grid{gap:4px}
+  .monitor-grid .panel{padding:5px}
+  .state-details span{font-size:.42rem}
+  .state-details strong{font-size:.49rem}
+  .monitor-table th,.monitor-table td{font-size:.44rem;padding:2px 1px}
+}
+/* En horizontal se prioriza la tabla: tarjetas y cabecera ocupan filas compactas. */
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){
+  .shell{grid-template-rows:auto auto auto minmax(0,1fr);gap:4px;padding:4px 8px;height:100dvh}
+  .shell>header{padding:0;gap:8px}
+  .shell>header .eyebrow{font-size:.44rem;margin:0}
+  .shell>header h1{font-size:.92rem;line-height:1;margin:0}
+  .shell>header .muted{display:none}
+  .shell>header .brand{display:none}
+  .shell>header .app-nav{margin:2px 0 0;gap:4px}
+  .shell>header .app-nav a{font-size:.56rem;padding:2px 7px}
+  .status-panel{padding:3px 6px}
+  .statuses{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+  .statuses article{padding:2px 5px;gap:4px;border-radius:6px}
+  .statuses article>div{display:flex;flex-direction:row;align-items:baseline;gap:4px}
+  .statuses article b{font-size:.52rem;white-space:nowrap}
+  .statuses article p{font-size:.5rem;white-space:nowrap;margin:0}
+  .statuses i{width:5px;height:5px;flex-basis:5px}
+  .monitor-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+  .monitor-grid .panel{padding:5px;border-radius:7px}
+  .monitor-grid .section-title{display:flex;flex-direction:row;align-items:center;margin:0 0 2px;gap:3px}
+  .monitor-grid .section-title h2{font-size:.62rem;white-space:nowrap}
+  .monitor-grid .section-title small{font-size:.37rem;white-space:nowrap}
+  .state-command{font-size:.72rem;line-height:1;margin:1px 0 3px}
+  .state-details{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
+  .state-details div{padding:3px;border-radius:5px}
+  .state-details span{font-size:.4rem;line-height:1;margin-bottom:1px}
+  .state-details strong{font-size:.46rem;line-height:1;overflow-wrap:anywhere}
+  .shell>section.panel:last-of-type{padding:4px 6px;min-height:0}
+  .shell>section.panel:last-of-type .section-title{margin:0 0 2px}
+  .shell>section.panel:last-of-type .section-title h2{font-size:.62rem}
+  .shell>section.panel:last-of-type .section-title small{font-size:.38rem}
+  #history-message{font-size:.43rem;margin:0 0 2px;line-height:1}
+  .shell>section.panel:last-of-type .table-responsive{min-height:0;overflow:hidden;padding:0 3px}
+  .monitor-table{table-layout:fixed;width:100%;font-size:.45rem}
+  .monitor-table th{font-size:.4rem;padding:2px 3px;white-space:nowrap}
+  .monitor-table td{font-size:.43rem;padding:2px 3px;line-height:1;white-space:nowrap}
+  .monitor-table th:first-child,.monitor-table td:first-child,
+  .monitor-table th:last-child,.monitor-table td:last-child{display:none}
+  .monitor-table th:nth-child(2),.monitor-table td:nth-child(2){width:38%}
+  .monitor-table th:nth-child(3),.monitor-table td:nth-child(3){width:14%}
+  .monitor-table th:nth-child(4),.monitor-table td:nth-child(4){width:48%}
+  .shell>footer{display:none}
+}
+@media(max-height:430px) and (orientation:landscape){
+  .shell{gap:3px;padding:3px 6px}
+  .monitor-grid .panel{padding:4px}
+  .state-details div{padding:2px}
+  .state-details span{font-size:.36rem}
+  .state-details strong{font-size:.42rem}
+  .monitor-table th,.monitor-table td{padding:1px 2px}
+  .monitor-table th,.monitor-table td{font-size:.4rem}
+}
