@@ -360,3 +360,59 @@ html,body{width:100%;height:100%;overflow:hidden}
     overflow-wrap:anywhere;
   }
 }
+
+
+/* CORRECCIÓN ESCRITORIO:
+   Evita que las filas de .columns se estiren y desplacen el joystick.
+   Mantiene el panel de movimientos a su altura natural para que DETENER
+   permanezca visible y accesible. Las reglas móviles existentes no cambian. */
+@media (min-width: 701px) and (min-height: 601px), (min-width: 951px) {
+  .columns {
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    grid-template-rows: max-content max-content;
+    align-content: start;
+    grid-auto-rows: max-content;
+  }
+
+  .columns > .joy-area {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: stretch;
+    min-height: 0;
+  }
+
+  .columns > section.panel:not(.demo) {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    height: max-content;
+    min-height: 0;
+  }
+
+  .columns > .demo {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .columns > section.panel:not(.demo) .commands {
+    flex: 0 0 auto;
+    min-height: 0;
+  }
+
+  .columns > section.panel:not(.demo) .command {
+    flex-shrink: 0;
+  }
+
+  .columns > section.panel:not(.demo) .stop {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 42px;
+    margin-bottom: 0;
+  }
+
+  .columns > .joy-area .joystick {
+    width: clamp(180px, 22vh, 220px);
+    max-width: 100%;
+  }
+}
